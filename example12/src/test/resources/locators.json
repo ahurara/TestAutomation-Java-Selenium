@@ -1,0 +1,15 @@
+{
+  "first_name": "firstName",
+  "last_name": "lastName",
+  "email": "userEmail",
+  "gender_male": "label[for='gender-radio-1']",
+  "phone_number": "userNumber",
+  "date_of_birth": "dateOfBirthInput",
+  "subject": "subjectsInput",
+  "sports": "//label[normalize-space()='Sports']",
+  "upload_picture": "uploadPicture",
+  "current_address": "currentAddress",
+  "select_state": "//div[contains(text(),'Select State')]",
+  "select_city": "//div[contains(text(),'Select City')]",
+  "submit_btn": "submit"
+}
