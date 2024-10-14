@@ -9,6 +9,7 @@ public class DemoQAFormPageLocators {
     public static final String firstNameLocator = getValue(DemoQAEnums.FIRST_NAME, FrameworkPathConstants.LOCATORS_FILE_PATH);
     public static final String lastNameLocator = getValue(DemoQAEnums.LAST_NAME, FrameworkPathConstants.LOCATORS_FILE_PATH);
     public static final String emailLocator = getValue(DemoQAEnums.EMAIL, FrameworkPathConstants.LOCATORS_FILE_PATH);
+    public static final String genderLocator = getValue(DemoQAEnums.GENDER_MALE, FrameworkPathConstants.LOCATORS_FILE_PATH);
     public static final String phoneNumberLocator = getValue(DemoQAEnums.PHONE_NUMBER, FrameworkPathConstants.LOCATORS_FILE_PATH);
     public static final String currentAddressLocator = getValue(DemoQAEnums.CURRENT_ADDRESS, FrameworkPathConstants.LOCATORS_FILE_PATH);
     public static final String dateOfBirthLocator = getValue(DemoQAEnums.DATE_OF_BIRTH, FrameworkPathConstants.LOCATORS_FILE_PATH);
