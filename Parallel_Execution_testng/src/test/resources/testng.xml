@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="CrossBrowserSuite">
+<suite name="CrossBrowserSuite" parallel="tests">
 
 <test name="Test on Chrome">
-    <parameter name="browser" value="chrome" />
+    <parameter name="browser" value="edge" />
     <classes>
         <class name="CrossBrowserTest" />
     </classes>
@@ -11,7 +11,7 @@
 <test name="Test on Chrome 2">
     <parameter name="browser" value="chrome" />
     <classes>
-        <class name="Testclass2" />
+        <class name="CrossBrowserTest" />
     </classes>
 </test>
 

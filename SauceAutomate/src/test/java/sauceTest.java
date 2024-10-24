@@ -1,9 +1,11 @@
 import Page.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -58,6 +60,13 @@ public class sauceTest {
 
         SauceProductOverview sauceProductOverview = new SauceProductOverview(driver);
         sauceProductOverview.clickFinish();
+
+        //assertion
+        WebElement heading = driver.findElement(By.xpath("//h2[normalize-space()='Thank you for your order!']")); // or use By.xpath, By.cssSelector, etc.
+
+
+        String expectedHeading = "Thank you for your order!";
+        Assert.assertEquals(heading.getText(), expectedHeading);
 
 
 

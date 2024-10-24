@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -15,13 +16,22 @@ import org.testng.annotations.*;
 public class CrossBrowserTest {
     WebDriver driver;
 
-    @BeforeSuite
-    public void setUp() {
-        // Setup ChromeDriver using WebDriverManager
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+    @Parameters("browser")
+    @BeforeTest
+    public void setUp(String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
         driver.manage().window().maximize();
+        driver.get("https://demoqa.com/automation-practice-form/");
     }
+
+
 
     @BeforeTest
     public void setUpTest() {
@@ -99,9 +109,6 @@ public class CrossBrowserTest {
 
     @AfterSuite
     public void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
+
     }
 }
